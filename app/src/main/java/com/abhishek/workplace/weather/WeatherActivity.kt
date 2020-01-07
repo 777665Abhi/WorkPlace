@@ -21,11 +21,6 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
-
 
 
 class WeatherActivity : AppCompatActivity() {
@@ -40,7 +35,7 @@ class WeatherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
-        mHandler=   Handler()
+        mHandler = Handler()
 
 //        getWeather()
         getNews()
@@ -137,23 +132,17 @@ class WeatherActivity : AppCompatActivity() {
                 updateData(limit + 5)
 
                 // close this activity
-            }
-            else{
+            } else {
                 articleList!!.clear()
                 updateData(0)
             }
 
         }, 5000)
-
-
     }
-
 
 
     override fun onDestroy() {
         mHandler.removeCallbacksAndMessages(null)
         super.onDestroy()
-       // mHandler.removeCallbacksAndMessages(null)
-
     }
 }
