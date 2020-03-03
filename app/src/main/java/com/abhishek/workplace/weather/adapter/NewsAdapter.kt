@@ -17,9 +17,9 @@ import com.bumptech.glide.Glide
 class NewsAdapter(val articleArrayList: ArrayList<Article>,val context:Activity) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.ViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val v = LayoutInflater.from(parent.context).inflate(R.layout.news_row_layout, parent, false)
-            return NewsAdapter.ViewHolder(v)
+            return ViewHolder(v)
  }
 
     override fun getItemCount(): Int {
